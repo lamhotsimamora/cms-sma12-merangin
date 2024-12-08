@@ -10,12 +10,17 @@
 				<?php 
 				
 				$server = base_url().'post/detail/';
+				$i = 0;
 				foreach ($data_post_limit as $key => $value) {
+					if ($i == 15 ){
+						break;
+					}
 					$title = $value['title'];
 					$link = $value['id_post'];
 
 					$link  = $server.$link;
 					echo '<li class="nav-item mb-2"><a href="'.$link.'" class="nav-link p-0 text-muted">'.$title.'</a></li>';		
+					$i++;
 				}
 
 				?>
@@ -28,14 +33,18 @@
 			<hr>
 			<ul class="nav flex-column">
 				<?php 
-				
+				$i = 0;
 				$server = base_url().'page/p/';
 				foreach ($data_pages as $key => $value) {
+					if ($i == 15 ){
+						break;
+					}
 					$name = $value['name'];
 					$slug = $value['slug'];
 
 					$slug  = $server.$slug;
 					echo '<li class="nav-item mb-2"><a href="'.$slug.'" class="nav-link p-0 text-muted">'.$name.'</a></li>';		
+					$i++;
 				}
 
 				?>
