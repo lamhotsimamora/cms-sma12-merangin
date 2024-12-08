@@ -10,7 +10,7 @@
 				<?php $server = base_url() . 'public/img/headers/'; ?>
 				
 				<a href="<?= base_url() ?>">
-					<img src="<?= $server . $data_header['foto'] ?>" height="60" width="90" class="img-thumbnail" alt="">
+					<img src="<?= $server . $data_header['foto'] ?>" height="30" width="40" class="img-thumbnail" alt="">
 				</a>
 				
 			</li>
@@ -21,7 +21,8 @@
 			</li>
 			<li>
 				<p>
-				<h5 style="color:white"> Call : <?= ($data_school->hp); ?></h5>
+				<h5 style="color:white"> Call : <?= ($data_school->hp); ?> </h5>
+				 
 				</p>
 			</li>
 

@@ -9,6 +9,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Home</title>
+	<script src="https://kit.fontawesome.com/672dd512a0.js" crossorigin="anonymous"></script>
 	<link rel="icon" type="image/x-icon" href="<?= base_url('') ?>/public/favicon.ico">
 	<link rel="stylesheet" href="<?= base_url('') ?>/public/assets/css/bootstrap.css">
 	<link rel="stylesheet" href="<?= base_url('') ?>/public/assets/css/splide.css">
@@ -59,6 +60,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<div class="b-example-divider"></div><br>
 
 	<?php include('component/partners.php') ?>
+	<br>
+	<div class="b-example-divider"></div>
+	<?php include('component/social-media.php') ?>
+	
 	<br>
 
 	<?php include('component/footer.php') ?>

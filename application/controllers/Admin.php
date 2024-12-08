@@ -5,6 +5,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Controller
 {	
+	private $data_social_media;
 	private $data_school;
 
 	public function AuthLogin()
@@ -35,12 +36,20 @@ class Admin extends CI_Controller
 		parent::__construct();
 		$this->load->model('M_admin');
 		$this->load->model('M_school');
+		$this->load->model("M_social_media");
 		$this->data_school = $this->loadDataSchool();
+		$this->data_social_media = $this->loadDataSocialMedia();
 	}
 
 	private function loadDataSchool(){
 		$this->M_school->id_school = 1;
 		return $this->M_school->loadData_byId(1);
+	}
+
+ 
+	private function loadDataSocialMedia(){
+		$this->M_social_media->id_social_media = 1;
+		return $this->M_social_media->loadData_byId(1);
 	}
 
 
@@ -69,7 +78,7 @@ class Admin extends CI_Controller
 			redirect('/admin/login');
 		} else {
 			
-			$this->load->view('admin/home',$this->data_school);
+			$this->load->view('admin/home',$this->data_school,$this->data_social_media);
 		}
 	}
 
@@ -123,8 +132,9 @@ class Admin extends CI_Controller
 		if (!$this->AuthLogin()) {
 			exit(json_encode(array('message' => 'access denied')));
 		}
+
 		$this->load->model('M_social_media');
-		$result = $this->M_social_media->loadDataById();
+		$result = $this->M_social_media->loadData_byId();
 
 		$response['result'] = false;
 		if ($result) {
