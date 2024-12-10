@@ -75,7 +75,7 @@
 				<?php
 
 					$server = base_url() . 'page/p/';
-
+					
 					for ($i = 0; $i < count($data_navbar); $i++) {
 						$checking_dropdown = false;
 						$template_dropdown = '';
@@ -83,6 +83,7 @@
 						$id_navbar = $data_navbar[$i]['id_navbar'];
 
 						foreach ($data_navbar_child as $key => $value) {
+							
 							$id_navbar_child = $value['id_navbar'];
 							$title_child = $value['title_child'];
 							$link_child = $value['link_child'];
